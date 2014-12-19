@@ -411,6 +411,7 @@
 				435D25431A44B2B500E1A3F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		435D25441A44B2B500E1A3F1 /* Build configuration list for PBXNativeTarget "Around42Tests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +420,7 @@
 				435D25461A44B2B500E1A3F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
