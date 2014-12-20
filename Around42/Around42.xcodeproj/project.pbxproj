@@ -16,6 +16,8 @@
 		435D253E1A44B2B500E1A3F1 /* Around42Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D253D1A44B2B500E1A3F1 /* Around42Tests.swift */; };
 		435D25481A44DE8B00E1A3F1 /* ListMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D25471A44DE8B00E1A3F1 /* ListMapViewController.swift */; };
 		435D254A1A44E3B200E1A3F1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435D25491A44E3B200E1A3F1 /* MapKit.framework */; };
+		436A38F31A4587EA00B2CF47 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436A38F21A4587EA00B2CF47 /* CoreLocation.framework */; };
+		436A38F51A4598F800B2CF47 /* 42.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 436A38F41A4598F800B2CF47 /* 42.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		435D253D1A44B2B500E1A3F1 /* Around42Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Around42Tests.swift; sourceTree = "<group>"; };
 		435D25471A44DE8B00E1A3F1 /* ListMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListMapViewController.swift; sourceTree = "<group>"; };
 		435D25491A44E3B200E1A3F1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		436A38F21A4587EA00B2CF47 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		436A38F41A4598F800B2CF47 /* 42.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 42.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				436A38F31A4587EA00B2CF47 /* CoreLocation.framework in Frameworks */,
 				435D254A1A44E3B200E1A3F1 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +71,8 @@
 		435D25171A44B2B400E1A3F1 = {
 			isa = PBXGroup;
 			children = (
+				436A38F41A4598F800B2CF47 /* 42.gpx */,
+				436A38F21A4587EA00B2CF47 /* CoreLocation.framework */,
 				435D25491A44E3B200E1A3F1 /* MapKit.framework */,
 				435D25221A44B2B400E1A3F1 /* Around42 */,
 				435D253A1A44B2B500E1A3F1 /* Around42Tests */,
@@ -203,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				435D252D1A44B2B400E1A3F1 /* Main.storyboard in Resources */,
+				436A38F51A4598F800B2CF47 /* 42.gpx in Resources */,
 				435D25321A44B2B500E1A3F1 /* LaunchScreen.xib in Resources */,
 				435D252F1A44B2B400E1A3F1 /* Images.xcassets in Resources */,
 			);
