@@ -4,6 +4,16 @@
 <array>
 	<dict>
 		<key>title</key>
+		<string>Mozilla France</string>
+		<key>subTitle</key>
+		<string>Pizzeria et Bar</string>
+		<key>lat</key>
+		<real>48.872139</real>
+		<key>lon</key>
+		<real>2.341154</real>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>Ecole 42</string>
 		<key>subTitle</key>
 		<string>Cybercafé, Hotêl et Cinéma</string>
@@ -18,9 +28,9 @@
 		<key>subTitle</key>
 		<string>Awesome !</string>
 		<key>lat</key>
-		<real>37.8017405</real>
+		<real>37.7755617</real>
 		<key>lon</key>
-		<real>-122.4641211</real>
+		<real>-122.4169883</real>
 	</dict>
 </array>
 </plist>

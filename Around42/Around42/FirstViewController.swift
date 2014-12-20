@@ -11,6 +11,9 @@ import MapKit
 import CoreLocation
 import Foundation
 
+var places: [Place] = []
+var arrayPlaces: NSMutableArray = []
+
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -26,15 +29,9 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         let span = MKCoordinateSpanMake(0.01, 0.01)
         let region = MKCoordinateRegion(center: location, span: span)
         mapView.setRegion(region, animated: true)
-        
-        let pinAnnot = MKPointAnnotation()
-        pinAnnot.setCoordinate(location)
-        pinAnnot.title = "Ecole 42"
-        pinAnnot.subtitle = "Born2Code"
-        mapView.addAnnotation(pinAnnot)
-        mapView.mapType = .Hybrid
-        mapView.showsUserLocation = true
-        
+		mapView.mapType = .Hybrid
+		mapView.showsUserLocation = true
+		
         // MARK: Location
         
         locationManager = CLLocationManager()
@@ -45,8 +42,13 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
         }
-        
-       
+		
+		// MARK: Plist
+		if let path = NSBundle.mainBundle().pathForResource("Places", ofType: "plist"){
+			arrayPlaces = NSMutableArray(contentsOfFile: path)!
+		}
+		createArrayPlaces()
+		createPinsAnnotations()
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,5 +99,31 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         }
         
     }
+	
+	// MARK: - Places
+	func createArrayPlaces() {
+		
+		for item in arrayPlaces {
+			var aPlace = Place(titlePinAnnotation: item["title"] as String,
+				subTitleAnnotation: item["subTitle"] as String,
+				latitude: item["lat"] as Double,
+				longitude: item["lon"] as Double)
+			places.append(aPlace)
+		}
+	}
+	
+	// MARK: Pin Annotation
+	func createPinsAnnotations() {
+		
+		for place in places {
+			let location = CLLocationCoordinate2D(latitude: place.lat_, longitude: place.lon_)
+			let pinAnnot = MKPointAnnotation()
+			pinAnnot.setCoordinate(location)
+			pinAnnot.title = place.title_
+			pinAnnot.subtitle = place.subTitle_
+			mapView.addAnnotation(pinAnnot)
+
+		}
+	}
 }
 

@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ot9-WK-L2g">
-                                        <rect key="frame" x="145" y="21" width="200" height="29"/>
+                                        <rect key="frame" x="107" y="21" width="200" height="29"/>
                                         <segments>
                                             <segment title="Standard"/>
                                             <segment title="Satellite"/>
@@ -33,9 +33,11 @@
                                             <action selector="modeMap:" destination="9pv-A4-QxB" eventType="valueChanged" id="mk0-oQ-9fB"/>
                                         </connections>
                                     </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14q-hH-8oU">
-                                        <rect key="frame" x="38" y="24" width="64" height="22"/>
-                                        <state key="normal" title="Track"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14q-hH-8oU">
+                                        <rect key="frame" x="22" y="24" width="25" height="25"/>
+                                        <state key="normal" image="Location">
+                                            <color key="titleColor" red="0.30619156353523758" green="0.63904500309688583" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="trackMode:" destination="9pv-A4-QxB" eventType="touchUpInside" id="7PB-Eo-H9f"/>
                                         </connections>
@@ -66,7 +68,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Second View Controller-->
+        <!--List-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Around42" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,7 +99,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="List" image="Top_Charts" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="tvListMap" destination="54a-UI-tYV" id="w3S-st-kng"/>
                     </connections>
@@ -148,6 +150,8 @@
     </scenes>
     <resources>
         <image name="Helper" width="32" height="32"/>
+        <image name="Location" width="25" height="25"/>
+        <image name="Top_Charts" width="27" height="23"/>
         <image name="map_icon" width="32" height="32"/>
     </resources>
 </document>

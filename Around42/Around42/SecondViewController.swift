@@ -11,8 +11,8 @@ import UIKit
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tvListMap: UITableView!
-    var arrayPlaces: NSMutableArray = []
-    var places: [Place] = []
+//    var arrayPlaces: NSMutableArray = []
+//    var places: [Place] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,16 +20,11 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tvListMap.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tvListMap.delegate = self
         
-        if let path = NSBundle.mainBundle().pathForResource("Places", ofType: "plist"){
-            arrayPlaces = NSMutableArray(contentsOfFile: path)!
-            
-//            Place(titlePinAnnotation: arrayPlaces[0]["title"], subTitleAnnotation: arrayPlaces[0]["subTitle"], latitude: arrayPlaces[0]["lat"], longitude: arrayPlaces[0]["lon"])
-            println(arrayPlaces[0])
-        }
-        
-        createArrayPlaces()
-        println(places[0].lon_)
-
+//        // MARK: Plist
+//        if let path = NSBundle.mainBundle().pathForResource("Places", ofType: "plist"){
+//            arrayPlaces = NSMutableArray(contentsOfFile: path)!
+//        }
+//        createArrayPlaces()
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,16 +54,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    // MARK: - Places
-    func createArrayPlaces() {
-        
-        for item in arrayPlaces {
-            var aPlace = Place(titlePinAnnotation: item["title"] as String,
-                                subTitleAnnotation: item["subTitle"] as String,
-                                latitude: item["lat"] as Double,
-                                longitude: item["lon"] as Double)
-            places.append(aPlace)
-        }
-    }
+
 }
 
