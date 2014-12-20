@@ -12,13 +12,15 @@ import MapKit
 class FirstViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var segBar: UISegmentedControl!
     
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        let location = CLLocationCoordinate2D(latitude: 48.896581, longitude: 2.318376)
+        // MARK: Map
+        let location = CLLocationCoordinate2D(latitude: 48.8965899, longitude: 2.3185)
         let span = MKCoordinateSpanMake(0.01, 0.01)
         let region = MKCoordinateRegion(center: location, span: span)
         mapView.setRegion(region, animated: true)
@@ -26,7 +28,12 @@ class FirstViewController: UIViewController {
         let pinAnnot = MKPointAnnotation()
         pinAnnot.setCoordinate(location)
         pinAnnot.title = "Ecole 42"
-        pinAnnot.title = "Born2Code"
+        pinAnnot.subtitle = "Born2Code"
+        mapView.addAnnotation(pinAnnot)
+        mapView.mapType = .Hybrid
+        
+        // MARK: Segment Bar
+        
         
     }
 
@@ -36,5 +43,17 @@ class FirstViewController: UIViewController {
     }
 
     
+    @IBAction func modeMap(sender: AnyObject) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0 :
+            mapView.mapType = .Standard
+        case 1 :
+            mapView.mapType = .Satellite
+        default :
+            mapView.mapType = .Hybrid
+        }
+        
+    }
 }
 

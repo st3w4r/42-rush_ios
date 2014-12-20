@@ -19,12 +19,30 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="g9F-0b-z5A">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mWi-Bu-CPV">
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="70"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ot9-WK-L2g">
+                                        <rect key="frame" x="81" y="21" width="200" height="29"/>
+                                        <segments>
+                                            <segment title="Standard"/>
+                                            <segment title="Satellite"/>
+                                            <segment title="Hybrid"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="modeMap:" destination="9pv-A4-QxB" eventType="valueChanged" id="mk0-oQ-9fB"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.79000000000000004" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map_icon" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="mapView" destination="g9F-0b-z5A" id="ftB-ub-bXm"/>
+                        <outlet property="segBar" destination="Ot9-WK-L2g" id="e2q-11-cfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
