@@ -56,6 +56,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map_icon" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="qKG-LX-BC4"/>
                     <connections>
                         <outlet property="mapView" destination="g9F-0b-z5A" id="ftB-ub-bXm"/>
                         <outlet property="segBar" destination="Ot9-WK-L2g" id="e2q-11-cfp"/>
@@ -81,7 +82,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="gTh-vl-g7r">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="gTh-vl-g7r">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gTh-vl-g7r" id="k6e-RP-PUC">
                                             <autoresizingMask key="autoresizingMask"/>

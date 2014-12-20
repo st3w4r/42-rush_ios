@@ -18,7 +18,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         tvListMap.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
-
+        tvListMap.delegate = self
+        
         if let path = NSBundle.mainBundle().pathForResource("Places", ofType: "plist"){
             arrayPlaces = NSMutableArray(contentsOfFile: path)!
             
@@ -46,6 +47,9 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println(places[indexPath.row].title_)
+        self.tabBarController?.selectedIndex = 0
+        (self.tabBarController?.selectedViewController as FirstViewController).locatePoint(places[indexPath.row].lat_, longitude: places[indexPath.row].lon_)
+    
 //        println("\(indexPath.row)")
     }
     
@@ -55,6 +59,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
+    // MARK: - Places
     func createArrayPlaces() {
         
         for item in arrayPlaces {

@@ -67,16 +67,22 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         error: NSError!) {
             println("Error while updating location " + error.localizedDescription);
     }
-    
+	
+	func locatePoint(latitude: Double, longitude: Double) {
+		if (locationManager?.location? != nil) {
+			let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+			let span = MKCoordinateSpanMake(0.001, 0.001)
+			let region = MKCoordinateRegion(center: location, span: span)
+			mapView.setRegion(region, animated: true)
+		}
+	}
+	
     @IBAction func trackMode(sender: AnyObject) {
         println("location requested");
         if (locationManager?.location? != nil) {
             let lat = locationManager.location.coordinate.latitude
             let lon = locationManager.location.coordinate.longitude
-            let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-            let span = MKCoordinateSpanMake(0.001, 0.001)
-            let region = MKCoordinateRegion(center: location, span: span)
-            mapView.setRegion(region, animated: true)
+          locatePoint(lat, longitude: lon)
         }
     }
     @IBAction func modeMap(sender: AnyObject) {
