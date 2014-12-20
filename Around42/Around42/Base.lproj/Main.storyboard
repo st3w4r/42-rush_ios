@@ -19,40 +19,46 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g9F-0b-z5A">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mWi-Bu-CPV">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Ot9-WK-L2g">
-                                        <rect key="frame" x="107" y="21" width="200" height="29"/>
-                                        <segments>
-                                            <segment title="Standard"/>
-                                            <segment title="Satellite"/>
-                                            <segment title="Hybrid"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="modeMap:" destination="9pv-A4-QxB" eventType="valueChanged" id="mk0-oQ-9fB"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14q-hH-8oU">
-                                        <rect key="frame" x="35" y="30" width="19" height="19"/>
-                                        <state key="normal" image="Location"/>
-                                        <connections>
-                                            <action selector="trackMode:" destination="9pv-A4-QxB" eventType="touchUpInside" id="7PB-Eo-H9f"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.79000000000000004" colorSpace="calibratedWhite"/>
-                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJO-uh-1o8">
+                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="w5c-5h-Qh2">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="14q-hH-8oU">
+                                            <rect key="frame" x="35" y="30" width="19" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="Location"/>
+                                            <connections>
+                                                <action selector="trackMode:" destination="9pv-A4-QxB" eventType="touchUpInside" id="7PB-Eo-H9f"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jg5-xJ-pC1"/>
+                                    <barButtonItem style="plain" id="wGg-Ho-hbw">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" id="Ot9-WK-L2g">
+                                            <rect key="frame" x="107" y="21" width="200" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Standard"/>
+                                                <segment title="Satellite"/>
+                                                <segment title="Hybrid"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="modeMap:" destination="9pv-A4-QxB" eventType="valueChanged" id="mk0-oQ-9fB"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="QJO-uh-1o8" firstAttribute="trailing" secondItem="g9F-0b-z5A" secondAttribute="trailing" id="3m3-gB-ZRQ"/>
+                            <constraint firstItem="QJO-uh-1o8" firstAttribute="leading" secondItem="g9F-0b-z5A" secondAttribute="leading" id="4FX-ki-35z"/>
                             <constraint firstAttribute="trailing" secondItem="g9F-0b-z5A" secondAttribute="trailing" id="9IG-Jc-8ea"/>
                             <constraint firstItem="g9F-0b-z5A" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="HOi-aI-a1F"/>
                             <constraint firstItem="g9F-0b-z5A" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Jxf-BB-cPT"/>
-                            <constraint firstItem="mWi-Bu-CPV" firstAttribute="trailing" secondItem="g9F-0b-z5A" secondAttribute="trailing" id="bGe-He-c1A"/>
                             <constraint firstAttribute="bottom" secondItem="g9F-0b-z5A" secondAttribute="bottom" id="bOk-jW-K3o"/>
-                            <constraint firstItem="mWi-Bu-CPV" firstAttribute="top" secondItem="g9F-0b-z5A" secondAttribute="top" id="bRK-cX-G0L"/>
-                            <constraint firstItem="mWi-Bu-CPV" firstAttribute="leading" secondItem="g9F-0b-z5A" secondAttribute="leading" id="bog-K0-EhM"/>
+                            <constraint firstItem="QJO-uh-1o8" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="oaD-jW-rIU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map_icon" id="acW-dT-cKf"/>
@@ -131,10 +137,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ez5-iZ-LUa">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ez5-iZ-LUa">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Kys-Ss-1h7"/>
+                                </constraints>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxy-8J-vnm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxy-8J-vnm">
                                 <rect key="frame" x="279" y="308" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -142,6 +151,13 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vxy-8J-vnm" firstAttribute="top" secondItem="Ez5-iZ-LUa" secondAttribute="bottom" constant="8" symbolic="YES" id="5jb-sO-or4"/>
+                            <constraint firstAttribute="trailing" secondItem="Ez5-iZ-LUa" secondAttribute="trailing" id="77X-XW-1eR"/>
+                            <constraint firstItem="Ez5-iZ-LUa" firstAttribute="top" secondItem="3uM-DZ-zNr" secondAttribute="top" id="A3W-dc-sil"/>
+                            <constraint firstItem="Ez5-iZ-LUa" firstAttribute="centerX" secondItem="Vxy-8J-vnm" secondAttribute="centerX" id="BEq-SA-tkH"/>
+                            <constraint firstItem="Ez5-iZ-LUa" firstAttribute="leading" secondItem="3uM-DZ-zNr" secondAttribute="leading" id="BPP-UB-0hg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rYc-6e-e4Z"/>
                     <connections>

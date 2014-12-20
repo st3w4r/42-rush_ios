@@ -52,6 +52,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowDetailMap" {
             var detailMap: DetailMapViewController = segue.destinationViewController as DetailMapViewController
+            detailMap.navigationItem.title = places[(sender as NSIndexPath).row].title_
             detailMap.place_ = places[(sender as NSIndexPath).row]
         }
     }

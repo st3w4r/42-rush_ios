@@ -121,7 +121,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 			pinAnnot.title = place.title_
 			pinAnnot.subtitle = place.subTitle_
 			mapView.addAnnotation(pinAnnot)
-
 		}
 	}
 }
