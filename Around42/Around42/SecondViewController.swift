@@ -17,7 +17,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tvListMap.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+//        tvListMap.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tvListMap.delegate = self
         
 //        // MARK: Plist
@@ -42,10 +42,18 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println(places[indexPath.row].title_)
-        self.tabBarController?.selectedIndex = 0
-        (self.tabBarController?.selectedViewController as FirstViewController).locatePoint(places[indexPath.row].lat_, longitude: places[indexPath.row].lon_)
+        performSegueWithIdentifier("ShowDetailMap", sender: indexPath)
+//        self.tabBarController?.selectedIndex = 0
+//        (self.tabBarController?.selectedViewController as FirstViewController).locatePoint(places[indexPath.row].lat_, longitude: places[indexPath.row].lon_)
     
 //        println("\(indexPath.row)")
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowDetailMap" {
+            var detailMap: DetailMapViewController = segue.destinationViewController as DetailMapViewController
+            detailMap.place_ = places[(sender as NSIndexPath).row]
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

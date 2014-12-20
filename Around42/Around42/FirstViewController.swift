@@ -33,7 +33,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 		mapView.showsUserLocation = true
 		
         // MARK: Location
-        
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
