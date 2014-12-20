@@ -2,7 +2,7 @@
 //  FirstViewController.swift
 //  Around42
 //
-//  Created by swift on 19/12/14.
+//  Created by Yaneël Barbier on 19/12/14.
 //  Copyright (c) 2014 swift. All rights reserved.
 //
 
@@ -16,11 +16,11 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var segBar: UISegmentedControl!
     var locationManager: CLLocationManager!
-    
+	
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+
         // MARK: Map
         let location = CLLocationCoordinate2D(latitude: 48.8965899, longitude: 2.3185)
         let span = MKCoordinateSpanMake(0.01, 0.01)
@@ -45,6 +45,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
         }
+        
        
     }
 

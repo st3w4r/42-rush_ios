@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Around42
 //
-//  Created by swift on 19/12/14.
+//  Created by Yaneël Barbier on 19/12/14.
 //  Copyright (c) 2014 swift. All rights reserved.
 //
 

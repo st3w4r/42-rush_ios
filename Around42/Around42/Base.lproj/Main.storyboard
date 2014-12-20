@@ -16,14 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g9F-0b-z5A">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g9F-0b-z5A">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mWi-Bu-CPV">
-                                <rect key="frame" x="0.0" y="0.0" width="500" height="70"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ot9-WK-L2g">
-                                        <rect key="frame" x="81" y="21" width="200" height="29"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ot9-WK-L2g">
+                                        <rect key="frame" x="145" y="21" width="200" height="29"/>
                                         <segments>
                                             <segment title="Standard"/>
                                             <segment title="Satellite"/>
@@ -34,27 +34,25 @@
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14q-hH-8oU">
-                                        <rect key="frame" x="158" y="46" width="46" height="30"/>
-                                        <state key="normal" title="Track">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <rect key="frame" x="38" y="24" width="64" height="22"/>
+                                        <state key="normal" title="Track"/>
                                         <connections>
                                             <action selector="trackMode:" destination="9pv-A4-QxB" eventType="touchUpInside" id="7PB-Eo-H9f"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.79000000000000004" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="Ot9-WK-L2g" secondAttribute="centerX" id="AOc-NI-7q1"/>
-                                    <constraint firstAttribute="centerY" secondItem="Ot9-WK-L2g" secondAttribute="centerY" id="e9J-iH-rxw"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="g9F-0b-z5A" secondAttribute="centerY" id="AC4-be-pHA"/>
-                            <constraint firstAttribute="centerX" secondItem="g9F-0b-z5A" secondAttribute="centerX" id="s5U-G1-2He"/>
-                            <constraint firstAttribute="centerX" secondItem="mWi-Bu-CPV" secondAttribute="centerX" id="u1D-2c-QmW"/>
+                            <constraint firstAttribute="trailing" secondItem="g9F-0b-z5A" secondAttribute="trailing" id="9IG-Jc-8ea"/>
+                            <constraint firstItem="g9F-0b-z5A" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="HOi-aI-a1F"/>
+                            <constraint firstItem="g9F-0b-z5A" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Jxf-BB-cPT"/>
+                            <constraint firstItem="mWi-Bu-CPV" firstAttribute="trailing" secondItem="g9F-0b-z5A" secondAttribute="trailing" id="bGe-He-c1A"/>
+                            <constraint firstAttribute="bottom" secondItem="g9F-0b-z5A" secondAttribute="bottom" id="bOk-jW-K3o"/>
+                            <constraint firstItem="mWi-Bu-CPV" firstAttribute="top" secondItem="g9F-0b-z5A" secondAttribute="top" id="bRK-cX-G0L"/>
+                            <constraint firstItem="mWi-Bu-CPV" firstAttribute="leading" secondItem="g9F-0b-z5A" secondAttribute="leading" id="bog-K0-EhM"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map_icon" id="acW-dT-cKf"/>
@@ -134,7 +132,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
