@@ -189,24 +189,24 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 	var newPinTitleField: UITextField!
 	var newPinSubTitleField: UITextField!
 	
-	func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
-		var tapGesture : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "calloutTapped:")
-		view.addGestureRecognizer(tapGesture)
-	}
+//	func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
+//		var tapGesture : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "calloutTapped:")
+//		view.addGestureRecognizer(tapGesture)
+//	}
 	
-	func calloutTapped(sender :UITapGestureRecognizer)
-	{
-		var view = sender.view as MKAnnotationView
-		var annotation: MKAnnotation = view.annotation
-		if annotation.isKindOfClass(MKPointAnnotation) {
-			var detailMap = DetailMapViewController()
-//			detailMap.place_.
-			presentViewController(detailMap, animated: true, completion: nil)
-			
-//            self.prepareForSegue(<#segue: UIStoryboardSegue#>, sender: <#AnyObject?#>)
-//			self.performSegueWithIdentifier("annotationDetailSegue", sender: annotation)
-		}
-	}
+//	func calloutTapped(sender :UITapGestureRecognizer)
+//	{
+//		var view = sender.view as MKAnnotationView
+//		var annotation: MKAnnotation = view.annotation
+//		if annotation.isKindOfClass(MKPointAnnotation) {
+//			var detailMap = DetailMapViewController()
+////			detailMap.place_.
+//			presentViewController(detailMap, animated: true, completion: nil)
+//			
+////            self.prepareForSegue(<#segue: UIStoryboardSegue#>, sender: <#AnyObject?#>)
+////			self.performSegueWithIdentifier("annotationDetailSegue", sender: annotation)
+//		}
+//	}
 	
 //	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //		if segue.identifier == "annotationDetailSegue" {
