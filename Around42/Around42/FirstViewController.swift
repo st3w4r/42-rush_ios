@@ -146,7 +146,8 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 			pinAnnot.setCoordinate(location)
 			pinAnnot.title = place.title_
 			pinAnnot.subtitle = place.subTitle_
-			mapView.addAnnotation(pinAnnot)
+			self.mapView.addAnnotation(pinAnnot);
+			var anView:MKAnnotationView = mapView(self.mapView, viewForAnnotation: pinAnnot)
 		}
 	}
 	
@@ -156,17 +157,35 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 		pinAnnot.setCoordinate(location)
 		pinAnnot.title = place.title_
 		pinAnnot.subtitle = place.subTitle_
-		
-//		let pinDrop = MKPinAnnotationView(annotation: pinAnnot, reuseIdentifier: "pin")
-//		pinDrop.animatesDrop = true
-		
-		mapView.addAnnotation(pinAnnot)
+		self.mapView.addAnnotation(pinAnnot);
+		var anView:MKAnnotationView = mapView(self.mapView, viewForAnnotation: pinAnnot)
 	}
-	
+
+	func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+		if annotation is MKUserLocation {
+			//return nil so map view draws "blue dot" for standard user location return nil 
+		}
+		let reuseId = "pin"
+		var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
+		if pinView == nil {
+			pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+			pinView!.canShowCallout = true
+			pinView!.animatesDrop = true
+			pinView!.pinColor = .Purple
+		} else {
+			pinView!.annotation = annotation
+        }
+        return pinView
+    }
+
+    
+    
+    
+    
 	var newPinTitleField: UITextField!
 	var newPinSubTitleField: UITextField!
-	
-	func addPlace(alert: UIAlertAction!) {
+    
+    func addPlace(alert: UIAlertAction!) {
 		var location = mapView.convertPoint(pointPin, toCoordinateFromView: self.mapView)
 		var aPlace = Place(titlePinAnnotation: newPinTitleField.text,
 						subTitleAnnotation: newPinSubTitleField.text,
@@ -191,8 +210,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 					"description": aPlace.desc_]
 		data?.addObject(tmp)
 		data?.writeToFile(path!, atomically: true)
-//		data = NSMutableArray(contentsOfFile: path!)
-//		println(data)
 	}
 	
 	func dropPin(gesture: UIGestureRecognizer) {
@@ -214,9 +231,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 			self.newPinSubTitleField = textField
 		}
 		self.presentViewController(alert, animated: true, completion: nil)
-		
-//		var point: CGPoint = gesture.locationInView(self.view)
-//		addPlace(point)
 	}
 	
 }
