@@ -208,12 +208,12 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 		}
 	}
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if segue.identifier == "annotationDetailSegue" {
-			let detailMap = segue.destinationViewController as DetailMapViewController
-		}
-	}
-	
+//	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//		if segue.identifier == "annotationDetailSegue" {
+//			let detailMap = segue.destinationViewController as DetailMapViewController
+//		}
+//	}
+//	
     func addPlace(alert: UIAlertAction!) {
 		if newPinTitleField.text != "" && newPinSubTitleField.text != ""
 		{
