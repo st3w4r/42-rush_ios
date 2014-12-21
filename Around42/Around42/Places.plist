@@ -4,6 +4,16 @@
 <array>
 	<dict>
 		<key>title</key>
+		<string>Nouvelle Calédonie</string>
+		<key>subTitle</key>
+		<string>Un beau pays</string>
+		<key>lat</key>
+		<real>-20.9373669</real>
+		<key>lon</key>
+		<real>164.6591334</real>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>Mozilla France</string>
 		<key>subTitle</key>
 		<string>Pizzeria et Bar</string>

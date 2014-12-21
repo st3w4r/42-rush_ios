@@ -25,6 +25,9 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //            arrayPlaces = NSMutableArray(contentsOfFile: path)!
 //        }
 //        createArrayPlaces()
+        
+        tvListMap.tableHeaderView = UIImageView(image: UIImage(named: "rhinoceros"))
+        tvListMap.contentInset.top = -400
     }
 
     override func didReceiveMemoryWarning() {
