@@ -16,7 +16,6 @@ class SettingsTableViewController: UITableViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         zoomSlider.value = Float(zoomValue) * 100.0
-        print(zoomValue)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +25,6 @@ class SettingsTableViewController: UITableViewController, UITableViewDelegate {
 
     @IBAction func zoom(sender: UISlider) {
         zoomValue = Double(sender.value)/100.0
-                print(zoomValue)
     }
 
     // MARK: - Table view data source

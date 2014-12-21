@@ -159,6 +159,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 		pinAnnot.subtitle = place.subTitle_
 		self.mapView.addAnnotation(pinAnnot);
 		var anView:MKAnnotationView = mapView(self.mapView, viewForAnnotation: pinAnnot)
+//        anView.image = UIImage(named: "Location")
 	}
 
 	func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
@@ -171,7 +172,10 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 			pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
 			pinView!.canShowCallout = true
 			pinView!.animatesDrop = true
-			pinView!.pinColor = .Purple
+			if (annotation.title == "San Francisco") {
+				pinView!.pinColor = .Purple
+			}
+			pinView!.rightCalloutAccessoryView = UIImageView(image: UIImage(named: "Next"))
 		} else {
 			pinView!.annotation = annotation
         }
@@ -184,8 +188,35 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     
 	var newPinTitleField: UITextField!
 	var newPinSubTitleField: UITextField!
-    
+	
+	func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
+		var tapGesture : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "calloutTapped:")
+		view.addGestureRecognizer(tapGesture)
+	}
+	
+	func calloutTapped(sender :UITapGestureRecognizer)
+	{
+		var view = sender.view as MKAnnotationView
+		var annotation: MKAnnotation = view.annotation
+		if annotation.isKindOfClass(MKPointAnnotation) {
+			var detailMap = DetailMapViewController()
+//			detailMap.place_.
+			presentViewController(detailMap, animated: true, completion: nil)
+			
+//            self.prepareForSegue(<#segue: UIStoryboardSegue#>, sender: <#AnyObject?#>)
+//			self.performSegueWithIdentifier("annotationDetailSegue", sender: annotation)
+		}
+	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "annotationDetailSegue" {
+			let detailMap = segue.destinationViewController as DetailMapViewController
+		}
+	}
+	
     func addPlace(alert: UIAlertAction!) {
+		if newPinTitleField.text != "" && newPinSubTitleField.text != ""
+		{
 		var location = mapView.convertPoint(pointPin, toCoordinateFromView: self.mapView)
 		var aPlace = Place(titlePinAnnotation: newPinTitleField.text,
 						subTitleAnnotation: newPinSubTitleField.text,
@@ -210,13 +241,14 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 					"description": aPlace.desc_]
 		data?.addObject(tmp)
 		data?.writeToFile(path!, atomically: true)
+		}
 	}
 	
 	func dropPin(gesture: UIGestureRecognizer) {
 		if gesture.state != UIGestureRecognizerState.Began {
 			return
 		}
-		
+
 		pointPin = gesture.locationInView(self.view)
 		
 		var alert: UIAlertController = UIAlertController(title: "Ajouter un lieu", message: "Ajouter une description", preferredStyle: UIAlertControllerStyle.Alert)
@@ -232,6 +264,6 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 		}
 		self.presentViewController(alert, animated: true, completion: nil)
 	}
-	
+
 }
 
