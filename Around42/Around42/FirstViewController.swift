@@ -163,7 +163,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
 	func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
 		if annotation is MKUserLocation {
-			//return nil so map view draws "blue dot" for standard user location return nil 
+			return nil
 		}
 		let reuseId = "pin"
 		var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
