@@ -17,6 +17,7 @@ class DetailMapViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var subTitle: UILabel!
     @IBOutlet weak var imgScrollView: UIScrollView!
+    @IBOutlet weak var descriptionText: UITextView!
     
 //    var mapView: MKMapView!
     
@@ -41,7 +42,9 @@ class DetailMapViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         
         
         //MARK: - Image ScrollView
-        imgScrollView.contentSize = CGSizeMake(self.imgScrollView.bounds.width * 2, self.imgScrollView.bounds.height)
+		if place_.getImages().count != 0 {
+			imgScrollView.contentSize = CGSizeMake(self.imgScrollView.bounds.width * 2, self.imgScrollView.bounds.height)
+		}
 		var x : CGFloat = 5
 		for img in place_.getImages() {
 			var data = NSData(contentsOfURL: NSURL(string: img)!)
@@ -52,6 +55,9 @@ class DetailMapViewController: UIViewController, MKMapViewDelegate, CLLocationMa
 			x += 205
 			imgScrollView.addSubview(img1)
 		}
+        
+        //MARk: Description
+        descriptionText.text = place_.desc_
 		
 //        tableViewDetail.contentInset = UIEdgeInsetsMake(300, 0, 0, 0)
 //        tableViewDetail.tableHeaderView = mapView

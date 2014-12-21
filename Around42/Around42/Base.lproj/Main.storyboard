@@ -156,40 +156,47 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKy-G7-qQf">
-                                <rect key="frame" x="243" y="494" width="114" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="114" id="mJg-mG-FMd"/>
-                                </constraints>
-                                <state key="normal" title="Voir sur la map">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="accessMap:" destination="PDz-qI-Pb2" eventType="touchUpInside" id="BbN-gZ-TJk"/>
-                                </connections>
-                            </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LV4-w2-nEV">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LV4-w2-nEV">
                                 <rect key="frame" x="-5" y="342" width="605" height="128"/>
                                 <connections>
                                     <outlet property="delegate" destination="PDz-qI-Pb2" id="vCK-w4-pjx"/>
                                 </connections>
                             </scrollView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="hkW-ix-fdc">
+                                <rect key="frame" x="16" y="472" width="568" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="r0i-zJ-cKt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LV4-w2-nEV" firstAttribute="trailing" secondItem="Ez5-iZ-LUa" secondAttribute="trailing" id="Ana-Ft-Ku4"/>
-                            <constraint firstItem="LV4-w2-nEV" firstAttribute="leading" secondItem="3uM-DZ-zNr" secondAttribute="leadingMargin" constant="-21" id="CcC-mz-9nC"/>
                             <constraint firstItem="Vxy-8J-vnm" firstAttribute="centerX" secondItem="Ez5-iZ-LUa" secondAttribute="centerX" id="M0H-Yd-w23"/>
                             <constraint firstItem="Ez5-iZ-LUa" firstAttribute="top" secondItem="3uM-DZ-zNr" secondAttribute="top" id="UH0-ud-T6I"/>
                             <constraint firstAttribute="trailing" secondItem="Ez5-iZ-LUa" secondAttribute="trailing" id="UMn-Em-Nb8"/>
+                            <constraint firstItem="hkW-ix-fdc" firstAttribute="top" secondItem="LV4-w2-nEV" secondAttribute="bottom" constant="2" id="eUz-kN-W3W"/>
                             <constraint firstItem="Ez5-iZ-LUa" firstAttribute="leading" secondItem="3uM-DZ-zNr" secondAttribute="leading" id="haE-Sq-ocU"/>
-                            <constraint firstItem="Vxy-8J-vnm" firstAttribute="centerX" secondItem="bKy-G7-qQf" secondAttribute="centerX" id="lza-Xj-ivz"/>
-                            <constraint firstItem="t1x-cc-yZT" firstAttribute="top" secondItem="bKy-G7-qQf" secondAttribute="bottom" constant="27" id="smf-u5-drt"/>
+                            <constraint firstItem="LV4-w2-nEV" firstAttribute="trailing" secondItem="Ez5-iZ-LUa" secondAttribute="trailing" id="nRZ-Nh-1ZT"/>
+                            <constraint firstItem="hkW-ix-fdc" firstAttribute="centerX" secondItem="Vxy-8J-vnm" secondAttribute="centerX" id="pdb-1w-jLQ"/>
                             <constraint firstItem="Vxy-8J-vnm" firstAttribute="top" secondItem="Ez5-iZ-LUa" secondAttribute="bottom" constant="8" symbolic="YES" id="vcY-BN-eke"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="hkW-ix-fdc" secondAttribute="bottom" constant="-12" id="wES-GP-6dR"/>
+                            <constraint firstItem="LV4-w2-nEV" firstAttribute="leading" secondItem="3uM-DZ-zNr" secondAttribute="leadingMargin" constant="-21" id="xaM-vF-9ev"/>
+                            <constraint firstItem="LV4-w2-nEV" firstAttribute="top" secondItem="Vxy-8J-vnm" secondAttribute="bottom" constant="13" id="xqs-gK-XcP"/>
+                            <constraint firstItem="hkW-ix-fdc" firstAttribute="leading" secondItem="3uM-DZ-zNr" secondAttribute="leadingMargin" id="yM4-JM-U0Y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rYc-6e-e4Z"/>
+                    <navigationItem key="navigationItem" id="rYc-6e-e4Z">
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="2R9-MI-2hG">
+                            <connections>
+                                <action selector="accessMap:" destination="PDz-qI-Pb2" id="sip-zR-Dn2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="descriptionText" destination="hkW-ix-fdc" id="73N-42-UZc"/>
                         <outlet property="imgScrollView" destination="LV4-w2-nEV" id="Znm-Y5-xVj"/>
                         <outlet property="mapView" destination="Ez5-iZ-LUa" id="70j-hc-R5L"/>
                         <outlet property="subTitle" destination="Vxy-8J-vnm" id="zlD-DN-MKP"/>
