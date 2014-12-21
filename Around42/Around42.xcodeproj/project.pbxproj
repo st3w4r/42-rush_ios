@@ -19,6 +19,7 @@
 		436A38F51A4598F800B2CF47 /* 42.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 436A38F41A4598F800B2CF47 /* 42.gpx */; };
 		436A38F71A459F5500B2CF47 /* Places.plist in Resources */ = {isa = PBXBuildFile; fileRef = 436A38F61A459F5500B2CF47 /* Places.plist */; };
 		436A38F91A45A1C500B2CF47 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A38F81A45A1C500B2CF47 /* Place.swift */; };
+		4375EC3C1A46D35500C274FD /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4375EC3B1A46D35500C274FD /* SettingsTableViewController.swift */; };
 		43E207481A46172F00748CB8 /* DetailMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E207471A46172F00748CB8 /* DetailMapViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		436A38F41A4598F800B2CF47 /* 42.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 42.gpx; sourceTree = "<group>"; };
 		436A38F61A459F5500B2CF47 /* Places.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Places.plist; sourceTree = "<group>"; };
 		436A38F81A45A1C500B2CF47 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		4375EC3B1A46D35500C274FD /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		43E207471A46172F00748CB8 /* DetailMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailMapViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 				43E207471A46172F00748CB8 /* DetailMapViewController.swift */,
 				436A38FA1A45A1D200B2CF47 /* Model */,
 				435D252B1A44B2B400E1A3F1 /* Main.storyboard */,
+				4375EC3B1A46D35500C274FD /* SettingsTableViewController.swift */,
 				435D252E1A44B2B400E1A3F1 /* Images.xcassets */,
 				435D25301A44B2B400E1A3F1 /* LaunchScreen.xib */,
 				435D25231A44B2B400E1A3F1 /* Supporting Files */,
@@ -247,6 +250,7 @@
 			files = (
 				435D252A1A44B2B400E1A3F1 /* SecondViewController.swift in Sources */,
 				43E207481A46172F00748CB8 /* DetailMapViewController.swift in Sources */,
+				4375EC3C1A46D35500C274FD /* SettingsTableViewController.swift in Sources */,
 				435D25261A44B2B400E1A3F1 /* AppDelegate.swift in Sources */,
 				435D25281A44B2B400E1A3F1 /* FirstViewController.swift in Sources */,
 				436A38F91A45A1C500B2CF47 /* Place.swift in Sources */,

@@ -12,7 +12,19 @@ import CoreLocation
 import Foundation
 
 var places: [Place] = []
-
+var zoomValue: Double! {
+	get {
+		var value = NSUserDefaults.standardUserDefaults().objectForKey("zoom") as? Double
+		if value == nil {
+			return 0.01
+		}
+		return value
+	}
+	set (newValue){
+		NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "zoom")
+		NSUserDefaults.standardUserDefaults().synchronize()
+	}
+}
 
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
@@ -22,14 +34,15 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     var locationManager: CLLocationManager!
 	var pointPin: CGPoint!
 	var arrayPlaces: NSMutableArray = []
+
 	
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+		
         // MARK: Map
         let location = CLLocationCoordinate2D(latitude: 48.8965899, longitude: 2.3185)
-        let span = MKCoordinateSpanMake(0.01, 0.01)
+        let span = MKCoordinateSpanMake(zoomValue, zoomValue)
         let region = MKCoordinateRegion(center: location, span: span)
         mapView.setRegion(region, animated: true)
 		mapView.mapType = .Hybrid
@@ -81,7 +94,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 	func locatePoint(latitude: Double, longitude: Double) {
 		if (locationManager?.location? != nil) {
 			let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-			let span = MKCoordinateSpanMake(0.001, 0.001)
+			let span = MKCoordinateSpanMake(zoomValue, zoomValue)
 			let region = MKCoordinateRegion(center: location, span: span)
 			mapView.setRegion(region, animated: true)
 		}
