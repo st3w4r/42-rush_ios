@@ -152,6 +152,15 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 			longitude: location.longitude)
 		addPin(aPlace)
 		places.append(aPlace)
+		
+		// MARK: Add Plist
+		let path = NSBundle.mainBundle().pathForResource("Places", ofType: "plist")
+		var data = NSMutableArray(contentsOfFile: path!)
+		var tmp = ["title": aPlace.title_, "subTitle": aPlace.subTitle_, "lat": aPlace.lat_, "lon": aPlace.lon_]
+		data?.addObject(tmp)
+		data?.writeToFile(path!, atomically: true)
+//		data = NSMutableArray(contentsOfFile: path!)
+//		println(data)
 	}
 	
 	func dropPin(gesture: UIGestureRecognizer) {
