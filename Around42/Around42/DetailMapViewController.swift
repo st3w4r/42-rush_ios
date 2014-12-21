@@ -46,8 +46,8 @@ class DetailMapViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         var data2 = NSData(contentsOfURL: NSURL(string: "https://irs3.4sqi.net/img/general/304x304/387_BUgGk7o3fhXFCkD5UEOUZ2pnVwTgRSc9qe5yGWFxULk.jpg")!)
         var img1 = UIImageView(image: UIImage(data:data!))
         var img2 = UIImageView(image: UIImage(data:data2!))
-        img1.frame = CGRectMake(0, 0, 200, 300)
-        img2.frame = CGRectMake(205, 0, 200, 300)
+        img1.frame = CGRectMake(5, 0, 200, 300)
+        img2.frame = CGRectMake(210, 0, 200, 300)
         imgScrollView.addSubview(img1)
         imgScrollView.addSubview(img2)
         

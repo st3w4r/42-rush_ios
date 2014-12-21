@@ -113,9 +113,13 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 		
 		for item in arrayPlaces {
 			var aPlace = Place(titlePinAnnotation: item["title"] as String,
-				subTitleAnnotation: item["subTitle"] as String,
-				latitude: item["lat"] as Double,
-				longitude: item["lon"] as Double)
+							subTitleAnnotation: item["subTitle"] as String,
+							latitude: item["lat"] as Double,
+							longitude: item["lon"] as Double,
+							imagesUrl: item["images"] as? [String],
+							typePlace: item["type"] as String,
+							descriptionPlace: item["description"] as String)
+			
 			places.append(aPlace)
 		}
 	}
@@ -152,16 +156,26 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 	func addPlace(alert: UIAlertAction!) {
 		var location = mapView.convertPoint(pointPin, toCoordinateFromView: self.mapView)
 		var aPlace = Place(titlePinAnnotation: newPinTitleField.text,
-			subTitleAnnotation: newPinSubTitleField.text,
-			latitude: location.latitude,
-			longitude: location.longitude)
+						subTitleAnnotation: newPinSubTitleField.text,
+						latitude: location.latitude,
+						longitude: location.longitude,
+						imagesUrl: [],
+						typePlace: "place",
+						descriptionPlace: ""
+						)
 		addPin(aPlace)
 		places.append(aPlace)
 		
 		// MARK: Add Plist
 		let path = NSBundle.mainBundle().pathForResource("Places", ofType: "plist")
 		var data = NSMutableArray(contentsOfFile: path!)
-		var tmp = ["title": aPlace.title_, "subTitle": aPlace.subTitle_, "lat": aPlace.lat_, "lon": aPlace.lon_]
+		var tmp = ["title": aPlace.title_,
+					"subTitle": aPlace.subTitle_,
+					"lat": aPlace.lat_,
+					"lon": aPlace.lon_,
+					"images": [],
+					"type": aPlace.type_,
+					"description": aPlace.desc_]
 		data?.addObject(tmp)
 		data?.writeToFile(path!, atomically: true)
 //		data = NSMutableArray(contentsOfFile: path!)

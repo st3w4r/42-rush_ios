@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Map-->
@@ -167,7 +168,7 @@
                                     <action selector="accessMap:" destination="PDz-qI-Pb2" eventType="touchUpInside" id="BbN-gZ-TJk"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LV4-w2-nEV">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LV4-w2-nEV">
                                 <rect key="frame" x="-5" y="342" width="605" height="128"/>
                                 <connections>
                                     <outlet property="delegate" destination="PDz-qI-Pb2" id="vCK-w4-pjx"/>
@@ -176,6 +177,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="LV4-w2-nEV" firstAttribute="trailing" secondItem="Ez5-iZ-LUa" secondAttribute="trailing" id="Ana-Ft-Ku4"/>
+                            <constraint firstItem="LV4-w2-nEV" firstAttribute="leading" secondItem="3uM-DZ-zNr" secondAttribute="leadingMargin" constant="-21" id="CcC-mz-9nC"/>
                             <constraint firstItem="Vxy-8J-vnm" firstAttribute="centerX" secondItem="Ez5-iZ-LUa" secondAttribute="centerX" id="M0H-Yd-w23"/>
                             <constraint firstItem="Ez5-iZ-LUa" firstAttribute="top" secondItem="3uM-DZ-zNr" secondAttribute="top" id="UH0-ud-T6I"/>
                             <constraint firstAttribute="trailing" secondItem="Ez5-iZ-LUa" secondAttribute="trailing" id="UMn-Em-Nb8"/>

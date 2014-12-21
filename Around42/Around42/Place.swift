@@ -14,12 +14,25 @@ class Place: NSObject {
     var subTitle_: String
     var lat_: Double
     var lon_: Double
+    var images_: [String]?
+    var type_: String
+    var desc_: String
     
-    init (titlePinAnnotation title: String, subTitleAnnotation subTitle:String, latitude lat: Double, longitude lon: Double) {
-//        super.init()
-        title_ = title
-        subTitle_ = subTitle
-        lat_ = lat
-        lon_ = lon
+    init (titlePinAnnotation    title: String,
+        subTitleAnnotation      subTitle: String,
+        latitude                lat: Double,
+        longitude               lon: Double,
+        imagesUrl               images: [String]?,
+        typePlace               type: String,
+        descriptionPlace        desc: String
+        ) {
+
+        title_      = title
+        subTitle_   = subTitle
+        lat_        = lat
+        lon_        = lon
+        images_     = images
+        type_       = type
+        desc_       = desc
     }
 }
