@@ -4,11 +4,18 @@
 <array>
 	<dict>
 		<key>description</key>
-		<string></string>
+		<string>La Nouvelle-Calédonie est un archipel d&apos;Océanie situé dans l&apos;océan Pacifique à 1 500 km à l&apos;est de l&apos;Australie et à 2 000 km au nord de la Nouvelle-Zélande, à quelques degrés au nord du tropique du Capricorne.</string>
 		<key>type</key>
-		<string></string>
+		<string>place</string>
 		<key>images</key>
-		<array/>
+		<array>
+			<string>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTPU7DNFvK0PJg4ZhP6EhMZZbs-LA_7MlEdsLzk8mAXaakyyMt7</string>
+			<string>https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRbfMDLjcgSJPMZWAHiTBxP7_Wht2nb_EMtP69XaB3jZ_Y6g3Uajw</string>
+			<string>http://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emblem_of_New_Caledonia.svg/65px-Emblem_of_New_Caledonia.svg.png</string>
+			<string>http://upload.wikimedia.org/wikipedia/commons/thumb/b/be/New_Caledonia_in_its_region_%28special_marker%29.svg/langfr-280px-New_Caledonia_in_its_region_%28special_marker%29.svg.png</string>
+			<string>http://upload.wikimedia.org/wikipedia/commons/thumb/8/80/New_Caledonia_-_S199828000484.jpg/220px-New_Caledonia_-_S199828000484.jpg</string>
+			<string>https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSsHJBSwjp6QiTajycgB0tdbofRpoJaE6DkoCr_Z84Z_0VuT6N-Ng</string>
+		</array>
 		<key>title</key>
 		<string>Nouvelle Calédonie</string>
 		<key>subTitle</key>
@@ -20,13 +27,15 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string></string>
+		<string>Mozilla est un nom utilisé en informatique avec beaucoup de significations différentes. Cependant toutes ces significations sont liées à l&apos;ancienne entreprise américaine Netscape Communications (liquidée en 2003) et son logiciel phare Netscape Navigator. Les différents usages du terme « Mozilla » sont indiqués ci-dessous dans l&apos;ordre chronologique de leur apparition.</string>
 		<key>type</key>
-		<string></string>
+		<string>place</string>
 		<key>images</key>
 		<array>
-			<string>https://irs2.4sqi.net/img/general/304x304/25943218_ZcBvlyeZY_JhXQz4MaPXGiTG0smwoFZZy8WZjdE9zxk.jpg</string>
+			<string>http://fc08.deviantart.net/fs71/i/2014/056/2/4/__mozilla_firefox___by_favetoni-d6m4u55.png</string>
 			<string>https://irs3.4sqi.net/img/general/304x304/387_BUgGk7o3fhXFCkD5UEOUZ2pnVwTgRSc9qe5yGWFxULk.jpg</string>
+			<string>https://mdn.mozillademos.org/files/9143/firefox-dev-ed_logo-only_1024.png</string>
+			<string>http://rack.0.mshcdn.com/media/ZgkyMDEyLzEyLzA0L2EzL21vemlsbGFhbm5vLmFMeS5qcGcKcAl0aHVtYgkxMjAweDYyNyMKZQlqcGc/eda898d3/d73/mozilla-announces-firefox-os-for-mobile-smartphones-coming-in-2013-4ac1adc1c1.jpg</string>
 		</array>
 		<key>title</key>
 		<string>Mozilla France</string>
@@ -44,7 +53,7 @@
 « Si la France, 5e puissance économique mondiale, tenait sa place dans le numérique, au lieu d’être 20e, elle aurait réglé le problème de l’emploi ». Le manque de développeurs ralentit dangereusement les projets de transformation de nos entreprises et freine la création de milliers d’emplois induits. Découvrez la seule école d’informatique entièrement gratuite et peer-to-peer.
 </string>
 		<key>type</key>
-		<string></string>
+		<string>place</string>
 		<key>images</key>
 		<array>
 			<string>http://www.franceinfo.fr/sites/default/files/2013/10/06/images/principale/vlcsnap-2013-10-06-13h02m26s35.jpg</string>
@@ -65,11 +74,17 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string></string>
+		<string>San Francisco (en anglais [sæn frənˈsɪskoʊ]), officiellement City and County of San Francisco, est une ville des États-Unis située dans l&apos;État de Californie. Son nom est couramment abrégé en SF et la ville est surnommée The City by the Bay1. La ville est située à l&apos;extrémité nord de la péninsule de San Francisco, entre l&apos;océan Pacifique à l&apos;ouest et la baie de San Francisco à l&apos;est.</string>
 		<key>type</key>
-		<string></string>
+		<string>city</string>
 		<key>images</key>
-		<array/>
+		<array>
+			<string>data:image/jpeg;base64,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</string>
+			<string>https://farm1.staticflickr.com/9/15230224_e0e455605e_z.jpg?zz=1</string>
+			<string>http://wwp.greenwichmeantime.com/time-zone/usa/california/images/san-francisco-california.jpg</string>
+			<string>http://www.visit-san-francisco.com/visit-san-francisco-3.jpg</string>
+			<string>http://www.google.fr/imgres?imgurl=http%3A%2F%2Fwww.conseil-voyageur.fr%2Fwp-content%2Fuploads%2F2012%2F01%2FRussian-Hill-Real-Estate-Homes-and-Condos-in-San-Francisco-CA.jpg&amp;imgrefurl=http%3A%2F%2Fwww.conseil-voyageur.fr%2Fsan-francisco%2F&amp;h=475&amp;w=600&amp;tbnid=s0UqJbbmdYlbDM%3A&amp;zoom=1&amp;docid=kmN05IMThR7hiM&amp;ei=6d-WVLntMYbnaMnLgbAH&amp;tbm=isch&amp;iact=rc&amp;uact=3&amp;dur=238&amp;page=1&amp;start=0&amp;ndsp=34&amp;ved=0CH8QrQMwHQ</string>
+		</array>
 		<key>title</key>
 		<string>San Francisco</string>
 		<key>subTitle</key>
