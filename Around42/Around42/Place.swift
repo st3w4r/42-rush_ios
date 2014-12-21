@@ -14,7 +14,7 @@ class Place: NSObject {
     var subTitle_: String
     var lat_: Double
     var lon_: Double
-    var images_: [String]?
+    var images_: [String]
     var type_: String
     var desc_: String
     
@@ -22,7 +22,7 @@ class Place: NSObject {
         subTitleAnnotation      subTitle: String,
         latitude                lat: Double,
         longitude               lon: Double,
-        imagesUrl               images: [String]?,
+        imagesUrl               images: [String],
         typePlace               type: String,
         descriptionPlace        desc: String
         ) {
@@ -34,5 +34,9 @@ class Place: NSObject {
         images_     = images
         type_       = type
         desc_       = desc
+    }
+    
+    func getImages () -> [String] {
+        return images_
     }
 }

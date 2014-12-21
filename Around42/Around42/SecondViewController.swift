@@ -65,7 +65,13 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let path = NSBundle.mainBundle().pathForResource("Places", ofType: "plist")
             var data = NSMutableArray()
             for aPlace in places {
-                var tmp = ["title": aPlace.title_, "subTitle": aPlace.subTitle_, "lat": aPlace.lat_, "lon": aPlace.lon_]
+                var tmp = ["title": aPlace.title_,
+                    "subTitle": aPlace.subTitle_,
+                    "lat": aPlace.lat_,
+                    "lon": aPlace.lon_,
+                    "images": aPlace.images_,
+                    "type": aPlace.type_,
+                    "description": aPlace.desc_]
                 data.addObject(tmp)
             }
             data.writeToFile(path!, atomically: true)

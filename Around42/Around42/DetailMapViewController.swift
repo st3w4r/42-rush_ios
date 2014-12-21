@@ -12,7 +12,7 @@ import CoreLocation
 
 class DetailMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate {
 
-    var place_ : Place?
+    var place_ : Place!
     var locationManager: CLLocationManager!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var subTitle: UILabel!
@@ -42,15 +42,17 @@ class DetailMapViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         
         //MARK: - Image ScrollView
         imgScrollView.contentSize = CGSizeMake(self.imgScrollView.bounds.width * 2, self.imgScrollView.bounds.height)
-        var data = NSData(contentsOfURL: NSURL(string: "https://irs2.4sqi.net/img/general/304x304/25943218_ZcBvlyeZY_JhXQz4MaPXGiTG0smwoFZZy8WZjdE9zxk.jpg")!)
-        var data2 = NSData(contentsOfURL: NSURL(string: "https://irs3.4sqi.net/img/general/304x304/387_BUgGk7o3fhXFCkD5UEOUZ2pnVwTgRSc9qe5yGWFxULk.jpg")!)
-        var img1 = UIImageView(image: UIImage(data:data!))
-        var img2 = UIImageView(image: UIImage(data:data2!))
-        img1.frame = CGRectMake(5, 0, 200, 300)
-        img2.frame = CGRectMake(210, 0, 200, 300)
-        imgScrollView.addSubview(img1)
-        imgScrollView.addSubview(img2)
-        
+		var x : CGFloat = 5
+		for img in place_.getImages() {
+			var data = NSData(contentsOfURL: NSURL(string: img)!)
+			var img1 = UIImageView(image: UIImage(data:data!))
+			img1.frame = CGRectMake(x, 0, 200, 300)
+			img1.contentMode = UIViewContentMode.ScaleAspectFill
+			img1.clipsToBounds = true
+			x += 205
+			imgScrollView.addSubview(img1)
+		}
+		
 //        tableViewDetail.contentInset = UIEdgeInsetsMake(300, 0, 0, 0)
 //        tableViewDetail.tableHeaderView = mapView
     }

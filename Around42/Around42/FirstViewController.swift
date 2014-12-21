@@ -116,7 +116,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 							subTitleAnnotation: item["subTitle"] as String,
 							latitude: item["lat"] as Double,
 							longitude: item["lon"] as Double,
-							imagesUrl: item["images"] as? [String],
+							imagesUrl: item["images"] as [String],
 							typePlace: item["type"] as String,
 							descriptionPlace: item["description"] as String)
 			
@@ -173,7 +173,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 					"subTitle": aPlace.subTitle_,
 					"lat": aPlace.lat_,
 					"lon": aPlace.lon_,
-					"images": [],
+					"images": aPlace.images_,
 					"type": aPlace.type_,
 					"description": aPlace.desc_]
 		data?.addObject(tmp)

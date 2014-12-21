@@ -24,7 +24,10 @@
 		<key>type</key>
 		<string></string>
 		<key>images</key>
-		<array/>
+		<array>
+			<string>https://irs2.4sqi.net/img/general/304x304/25943218_ZcBvlyeZY_JhXQz4MaPXGiTG0smwoFZZy8WZjdE9zxk.jpg</string>
+			<string>https://irs3.4sqi.net/img/general/304x304/387_BUgGk7o3fhXFCkD5UEOUZ2pnVwTgRSc9qe5yGWFxULk.jpg</string>
+		</array>
 		<key>title</key>
 		<string>Mozilla France</string>
 		<key>subTitle</key>
@@ -40,7 +43,14 @@
 		<key>type</key>
 		<string></string>
 		<key>images</key>
-		<array/>
+		<array>
+			<string>http://www.franceinfo.fr/sites/default/files/2013/10/06/images/principale/vlcsnap-2013-10-06-13h02m26s35.jpg</string>
+			<string>http://www.5minutesatuer.com/medias/42-born-to-code-ecole.jpg</string>
+			<string>http://static.ladepeche.fr/content/media/image/zoom/2014/11/26/part-par-par8037941-1-1-0.jpg</string>
+			<string>http://www.clicanoo.re/IMG/jpg/a091b84479d339b2cf98bf6d3b1333090a35a9c8.jpg</string>
+			<string>http://referentiel.nouvelobs.com/file/6652424-42-une-ecole-d-informatique-pour-sauver-la-france.jpg</string>
+			<string>http://assets.etudiant.lefigaro.fr/cms/pics/PHO16558810-3dab-11e4-9565-a93ce899cd06-805x453.jpg</string>
+		</array>
 		<key>title</key>
 		<string>Ecole 42</string>
 		<key>subTitle</key>
