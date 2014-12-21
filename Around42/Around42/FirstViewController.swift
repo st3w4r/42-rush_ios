@@ -12,13 +12,16 @@ import CoreLocation
 import Foundation
 
 var places: [Place] = []
-var arrayPlaces: NSMutableArray = []
+
+
 
 class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var segBar: UISegmentedControl!
     var locationManager: CLLocationManager!
+	var pointPin: CGPoint!
+	var arrayPlaces: NSMutableArray = []
 	
     override func viewDidLoad() {
         
@@ -31,6 +34,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         mapView.setRegion(region, animated: true)
 		mapView.mapType = .Hybrid
 		mapView.showsUserLocation = true
+		mapView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: "dropPin:"))
 		
         // MARK: Location
         locationManager = CLLocationManager()
@@ -123,5 +127,56 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 			mapView.addAnnotation(pinAnnot)
 		}
 	}
+	
+	func addPin(place: Place) {
+		let location = CLLocationCoordinate2D(latitude: place.lat_, longitude: place.lon_)
+		let pinAnnot = MKPointAnnotation()
+		pinAnnot.setCoordinate(location)
+		pinAnnot.title = place.title_
+		pinAnnot.subtitle = place.subTitle_
+		
+//		let pinDrop = MKPinAnnotationView(annotation: pinAnnot, reuseIdentifier: "pin")
+//		pinDrop.animatesDrop = true
+		
+		mapView.addAnnotation(pinAnnot)
+	}
+	
+	var newPinTitleField: UITextField!
+	var newPinSubTitleField: UITextField!
+	
+	func addPlace(alert: UIAlertAction!) {
+		var location = mapView.convertPoint(pointPin, toCoordinateFromView: self.mapView)
+		var aPlace = Place(titlePinAnnotation: newPinTitleField.text,
+			subTitleAnnotation: newPinSubTitleField.text,
+			latitude: location.latitude,
+			longitude: location.longitude)
+		addPin(aPlace)
+		places.append(aPlace)
+	}
+	
+	func dropPin(gesture: UIGestureRecognizer) {
+		if gesture.state != UIGestureRecognizerState.Began {
+			return
+		}
+		
+		pointPin = gesture.locationInView(self.view)
+		
+		var alert: UIAlertController = UIAlertController(title: "Ajouter un lieu", message: "Ajouter une description", preferredStyle: UIAlertControllerStyle.Alert)
+		alert.addAction(UIAlertAction(title: "Annuler", style: UIAlertActionStyle.Cancel, handler: nil))
+		alert.addAction(UIAlertAction(title: "Ajouter", style: UIAlertActionStyle.Default, handler: addPlace))
+		alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+			textField.placeholder = "Nom du lieu"
+			self.newPinTitleField = textField
+		}
+		alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+			textField.placeholder = "Description du lieu"
+			self.newPinSubTitleField = textField
+		}
+		self.presentViewController(alert, animated: true, completion: nil)
+		
+//		var point: CGPoint = gesture.locationInView(self.view)
+//		addPlace(point)
+	}
+	
 }
 

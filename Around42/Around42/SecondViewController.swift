@@ -37,7 +37,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayPlaces.count
+        return places.count
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -59,7 +59,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
-        cell.textLabel.text = arrayPlaces[indexPath.row]["title"] as? String
+        cell.textLabel.text = places[indexPath.row].title_
         return cell
     }
     
