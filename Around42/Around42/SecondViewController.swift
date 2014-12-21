@@ -49,6 +49,26 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        println("\(indexPath.row)")
     }
     
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            places.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+            
+            // MARK: Delete Plist
+            let path = NSBundle.mainBundle().pathForResource("Places", ofType: "plist")
+            var data = NSMutableArray()
+            for aPlace in places {
+                var tmp = ["title": aPlace.title_, "subTitle": aPlace.subTitle_, "lat": aPlace.lat_, "lon": aPlace.lon_]
+                data.addObject(tmp)
+            }
+            data.writeToFile(path!, atomically: true)
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowDetailMap" {
             var detailMap: DetailMapViewController = segue.destinationViewController as DetailMapViewController

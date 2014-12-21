@@ -53,6 +53,11 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 		createArrayPlaces()
 		createPinsAnnotations()
     }
+	
+	override func viewWillAppear(animated: Bool) {
+		mapView.removeAnnotations(mapView.annotations)
+		createPinsAnnotations()
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
